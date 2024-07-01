@@ -3,12 +3,14 @@ import ButtonWithGradientBorder from "@/components/common/ButtonWithGradientBord
 import BaseDialog from "@/components/dialog/BaseDialog";
 import BitcoinIcon from "@/components/icons/BitcoinIcon";
 import CopyIcon from "@/components/icons/CopyIcon";
+import DelegationIcon from "@/components/icons/DelegationIcon";
 import InfoIcon from "@/components/icons/InfoIcon";
 import KeyIcon from "@/components/icons/KeyIcon";
 import VerifiedIcon from "@/components/icons/VerifiedIcon";
 import WalletCircleIcon from "@/components/icons/WalletCircleIcon";
 import { GlobalContext } from "@/context/GlobalContext";
 import { cn } from "@/lib/utils";
+import { getDateDiff } from "@/utils/getDateDiff";
 import { useContext, useState } from "react";
 
 export default function Home() {
@@ -44,7 +46,7 @@ export default function Home() {
           </div>
           <div className="px-7 py-3 border border-[#95959599] rounded-xl bg-[#0b144099] flex flex-col justify-center items-center gap-4">
             <p className="text-xl font-normal flex items-center gap-2">
-              <KeyIcon />
+              <DelegationIcon />
               Delegations
             </p>
             <p className="text-[25px] font-bold">562.18K</p>
@@ -167,7 +169,7 @@ export default function Home() {
                     </div>
                     <div className="flex gap-10 items-center text-xl">
                       <p className="font-bold text-[#909090]">Inception</p>
-                      <p className="">{transaction.inception}</p>
+                      <p className="">{getDateDiff(transaction.inception)}</p>
                     </div>
                     <div className="flex gap-10 items-center text-xl">
                       <p className="font-bold text-[#909090]">
@@ -202,9 +204,9 @@ export default function Home() {
         <p className="text-[30px] font-bold mb-[22px]">Set up staking terms</p>
         <p className="text-sm font-normal mb-10">
           You can withdraw your stake at any time with a 7-day unbonding period.
-          Additionally, there's a maximum staking period of 65 weeks. If your
-          stake isn&apos;t withdrawn by the end of this period, you can still
-          withdraw it along with any accrued rewards. These timelines are
+          Additionally, there&apos;s a maximum staking period of 65 weeks. If
+          your stake isn&apos;t withdrawn by the end of this period, you can
+          still withdraw it along with any accrued rewards. These timelines are
           estimates based on average Signet BTC block times.
         </p>
         <p className="text-[30px] font-bold mb-4">Amount</p>
